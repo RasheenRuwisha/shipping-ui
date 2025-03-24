@@ -493,13 +493,13 @@ export default function Home() {
                     <div className="flex flex-col">
                       <p className="text-xs">Avg Cost</p>
                       <p className="text-4xl">
-                        {data.top_carriers[0]["Avg Cost"]}
+                        {data.top_carriers[0]["Avg Cost"].toFixed(2)}
                       </p>
                     </div>
                     <div className="flex flex-col">
                       <p className="text-xs">Avg Weight</p>
                       <p className="text-4xl">
-                        {data.top_carriers[0]["Avg Cost"]}
+                        {data.top_carriers[0]["Avg Cost"].toFixed(2)}
                       </p>
                     </div>
                   </div>
@@ -531,8 +531,12 @@ export default function Home() {
                             <TableCell>{carrier["Max Weight"]}</TableCell>
                             <TableCell>{carrier["Min Cost"]}</TableCell>
                             <TableCell>{carrier["Min Weight"]}</TableCell>
-                            <TableCell>{carrier["Avg Cost"]}</TableCell>
-                            <TableCell>{carrier["Avg Weight"]}</TableCell>
+                            <TableCell>
+                              {carrier["Avg Cost"].toFixed(2)}
+                            </TableCell>
+                            <TableCell>
+                              {carrier["Avg Weight"].toFixed(2)}
+                            </TableCell>
                           </TableRow>
                         ))}
                       </TableBody>

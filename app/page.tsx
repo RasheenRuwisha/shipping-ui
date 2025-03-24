@@ -42,7 +42,7 @@ export default function Home() {
       isCollapsed: false, // First package is expanded by default
     },
   ]);
-
+  const { toast } = useToast();
   const [state, setState] = useState("");
   const [data, setData] = useState({});
 
@@ -108,7 +108,7 @@ export default function Home() {
     // Prepare the data for the API request
     const requestData = {
       Currency: "CAD",
-      Address: state,
+      Address: state.toUpperCase(),
       Length: packages.map((pkg) =>
         isNaN(parseFloat(pkg.length)) ? 0 : parseFloat(pkg.length)
       ),
@@ -151,6 +151,11 @@ export default function Home() {
       const responseData = await response.json();
       setData(responseData);
     } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem with your request.",
+      });
       console.error("Error fetching recommendation:", error);
     }
   };

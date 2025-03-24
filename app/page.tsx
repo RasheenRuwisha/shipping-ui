@@ -30,6 +30,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Home() {
   const [packages, setPackages] = useState([
@@ -106,6 +107,23 @@ export default function Home() {
   // Function to handle the API request when "Get recommendation" is clicked
   const getRecommendation = async () => {
     // Prepare the data for the API request
+    if (state == "") {
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "Enter the state",
+      });
+      return;
+    }
+
+    if (weight == "") {
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "Enter the weight",
+      });
+      return;
+    }
     const requestData = {
       Currency: "CAD",
       Address: state.toUpperCase(),
@@ -397,7 +415,7 @@ export default function Home() {
             </div>
           </CardContent>
           <CardFooter>
-            <Button variant="outline" onClick={getRecommendation}>
+            <Button variant="default" onClick={getRecommendation}>
               Get Recommendation
             </Button>
           </CardFooter>

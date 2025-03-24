@@ -413,7 +413,7 @@ export default function Home() {
                       <TableHead>Request</TableHead>
                       <TableHead>Carrier Name</TableHead>
                       <TableHead>Cost</TableHead>
-                      <TableHead>Address</TableHead>
+                      <TableHead>State</TableHead>
                       <TableHead>Width</TableHead>
                       <TableHead>Height</TableHead>
                       <TableHead>Length</TableHead>
@@ -430,7 +430,7 @@ export default function Home() {
                         </TableCell>
                         <TableCell>{match.Carrier}</TableCell>
                         <TableCell>{match.Cost}</TableCell>
-                        <TableCell>{match.Address}</TableCell>
+                        <TableCell>{match.State}</TableCell>
                         <TableCell>{match.Width}</TableCell>
                         <TableCell>{match.Height}</TableCell>
                         <TableCell>{match.Length}</TableCell>

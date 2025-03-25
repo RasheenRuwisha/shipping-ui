@@ -156,7 +156,7 @@ export default function Home() {
 
     try {
       const response = await fetch(
-        "https://shipping-ll5x.onrender.com/predict",
+        "https://shippingapi.rasheenruwisha.com/predict",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

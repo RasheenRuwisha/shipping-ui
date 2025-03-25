@@ -273,11 +273,11 @@ export default function Home() {
                         <Select
                           id={`package-type-${index}`}
                           value={pkg.packageType}
-                          onChange={(e) =>
+                          onValueChange={(value) =>
                             handleInputChange(index, {
                               target: {
                                 name: "packageType",
-                                value: e.target.value,
+                                value,
                               },
                             })
                           }
